@@ -1,0 +1,14 @@
+
+.main_div{
+    display: flex;
+    justify-content: space-around;
+    background-color: brown;
+}
+.link{
+    text-decoration: none !important ;  /* remove underline */
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    
+}
