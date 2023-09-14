@@ -3,4 +3,10 @@
     justify-content: center;
     margin-top: 2rem;
     gap: 1rem;
+    padding: 1rem;
+}
+
+.inputbox{
+    height: 3rem;
+    width: 55%;
 }

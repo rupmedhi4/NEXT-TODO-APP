@@ -1,0 +1,39 @@
+.inner_div {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 1rem;
+    width: 60%;
+    margin: 0 auto; 
+    margin-top: 1rem; 
+   justify-content: flex-start;
+    border-radius: 8px; 
+    background-color: #f0f0f0; 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .inner_div  {
+    font-size: 16px; 
+    display: flex;
+    justify-content: space-around;
+   
+  }
+  .pending_div{
+    margin-right: 5rem;
+  }
+  .delete_div{
+    display: flex;
+    gap: 1rem;
+  }
+
+  .deleteBtn{
+    color: rgb(242, 239, 237);
+    background-color: rgb(214, 17, 60);
+    border-radius: 5px;
+  }
+
+  .completeBtn{
+    color: rgb(239, 238, 243);
+    background-color: rgb(111, 101, 225);
+    border-radius: 5px;
+  }
