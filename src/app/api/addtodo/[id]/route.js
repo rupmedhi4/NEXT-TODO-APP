@@ -14,8 +14,8 @@ export async function DELETE(request, content){
 
 export async function PUT(request, content) {
 
-    const delete_Id = content.params.id
-    const record = { _id: delete_Id }
+    const update_Id = content.params.id
+    const record = { _id: update_Id }
     const payload = await request.json()
     await mongoose.connect(connectionString)
     const result = await todoCollections.findOneAndUpdate(record, payload)

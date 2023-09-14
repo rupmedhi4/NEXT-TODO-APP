@@ -16,11 +16,40 @@ export default function Page({ params }) {
       }
     };
     fetchData();
-  }, [params.id]); 
+  }, [params.id]);
+
+
+  const updateData = () => {
+
+    const fetchData = async () => {
+      try {
+        let response = await fetch(`http://localhost:3000/api/addtodo/${params.id}`, {
+          method: "PUT",
+          body: JSON.stringify({ todo:updateTodo })
+        });
+        response = await response.json()
+        if (response.sucess) {
+          alert("update successfully ");
+        } else {
+          alert("something wrong");
+          console.log(response.success);
+
+        }
+      } catch (error) {
+        alert("Something went wrong");
+        console.error(error);
+      }
+    }
+    fetchData()
+
+  }
+
 
   const handleInputChange = (e) => {
     setUpdateTodo(e.target.value);
   };
+
+
 
   return (
     <div className={style.main_div}>
@@ -29,9 +58,9 @@ export default function Page({ params }) {
         placeholder='Enter your today task'
         className={style.inputbox}
         value={updateTodo}
-        onChange={handleInputChange} 
+        onChange={handleInputChange}
       />
-      <button>Update todo</button>
+      <button onClick={updateData}>Update todo</button>
     </div>
   );
 }
