@@ -22,3 +22,14 @@ export async function PUT(request, content) {
     return NextResponse.json({ result, sucess: true })
 
 }
+
+
+export async function GET(request, content) {
+
+    const update_Id = content.params.id
+    const id = { _id: update_Id }
+    await mongoose.connect(connectionString)
+    const result = await todoCollections.findById(id)
+    return NextResponse.json({ result, success: true })
+
+}
