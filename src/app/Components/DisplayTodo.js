@@ -53,6 +53,32 @@ export default function DisplayTodo() {
   }
 
 
+  const updateBtn =  (id) => {
+
+    const fetchData = async () => {
+      try {
+        let response = await fetch(`http://localhost:3000/api/addtodo/${id}`, {
+          method: "PUT",
+          body: JSON.stringify({ completed : true })
+        });
+        response = await response.json()
+        if (response.sucess) {
+          alert("Completed task");
+        } else {
+          alert("something wrong");
+          console.log(response.success);
+
+        }
+      } catch (error) {
+        alert("Something went wrong");
+        console.error(error);
+      }
+    }
+    fetchData()
+
+  }
+
+
   return (
     <div className={style.main_div}>
       {showTodo.map((data) => (
@@ -63,7 +89,11 @@ export default function DisplayTodo() {
           </div>
           <div className={style.delete_div}>
             <button className={style.deleteBtn} onClick={() => deleteBtn(data._id)}>Delete</button>
-            <button className={style.completeBtn} onClick={() => setComplete(true)}>Incomplete</button>
+            <button className={style.completeBtn} onClick={() => updateBtn(data._id)}>
+
+                 <span>{data.completed === "true" ? "Completed" : "Incompleted"}</span>
+
+            </button>
           </div>
         </div>
       ))}
