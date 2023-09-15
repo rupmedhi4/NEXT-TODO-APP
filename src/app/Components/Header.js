@@ -7,6 +7,7 @@ export default function Header() {
       <div className={style.main_div}>
         <h1>TODO APP</h1>
         <Link href="/addtodo" className={style.link}>Add Todo</Link>
+        <Link href="/completedtask" className={style.link}>Completed Task</Link>
       </div>
     </>
   )
